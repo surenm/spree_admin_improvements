@@ -1,3 +1,18 @@
 <tr class="fulfillment total">
-  Fullfillment text goes here
+  <td colspan="5"> 
+  <% if shipment.sent_to_fulfillment_at %>
+    Order sent to fulfillment at <%= pretty_time(shipment.sent_to_fulfillment_at) %>
+  <% else %>
+    Order hasn't been sent to fulfillment yet. 
+  <% end %>
+
+  <% if shipment.log_entries.count > 0 %>
+    <br /><br />
+    Fulfillment log: <br />
+    <% shipment.log_entries.each do |log_entry| %>
+      <%= pretty_time(log_entry.updated_at) %>: <%= log_entry.details %> <br />
+    <% end %>
+  <% end %>
+
+  </td>
 </tr>
