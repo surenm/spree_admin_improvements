@@ -3,3 +3,6 @@
 
 en:
   hello: "Hello world"
+  spree:
+    date_picker:
+      format: '%Y-%m-%d %H:%M:00'
