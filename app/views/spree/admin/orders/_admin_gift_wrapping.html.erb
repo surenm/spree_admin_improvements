@@ -1,0 +1,9 @@
+<%- # Only show form for gift wrapping message if order has such an attribute %>
+<% if @order.attributes.has_key?("gift_wrapping_message") %> 
+<div class="alpha twelve columns">
+  <fieldset class="no-border-bottom">
+      <legend align="center">Gift Wrapping Message</legend>
+      <%= f.text_area :gift_wrapping_message, :size => 100, :maxlength => 100, :cols => 100, :rows => 6 %>
+    </fieldset>
+</div>
+<% end %>
